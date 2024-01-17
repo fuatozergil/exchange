@@ -1,0 +1,13 @@
+spring:
+ data:
+  mongodb:
+   host: 172.17.0.4
+   port: 27017
+   database: analytic
+ cache:
+  type: redis
+  host: 172.17.0.2
+  port: 6379
+
+server:
+ port: 8084
