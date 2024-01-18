@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "8ed6a3b1-f6cf-4267-bf9b-5c7d8d1451a4",
+		"name": "Exchange-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15982965"
+	},
+	"item": [
+		{
+			"name": "Rate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "http://api.exchangeratesapi.io/v1/latest?access_key=39ced528747371cbf637cb201033f86d&symbols=USD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.exchangeratesapi.io/v1/latest?access_key=39ced528747371cbf637cb201033f86d&symbols=USD",
+					"protocol": "http",
+					"host": [
+						"api",
+						"exchangeratesapi",
+						"io"
+					],
+					"path": [
+						"v1",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "access_key",
+							"value": "39ced528747371cbf637cb201033f86d"
+						},
+						{
+							"key": "symbols",
+							"value": "USD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Conversion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/exchange/conversion/EUR/USD/100.0",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"exchange",
+						"conversion",
+						"EUR",
+						"USD",
+						"100.0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/exchange/history/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"exchange",
+						"history",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
