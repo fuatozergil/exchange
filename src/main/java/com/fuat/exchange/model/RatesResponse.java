@@ -1,7 +1,6 @@
 package com.fuat.exchange.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;

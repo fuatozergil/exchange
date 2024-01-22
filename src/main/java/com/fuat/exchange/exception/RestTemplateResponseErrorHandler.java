@@ -14,8 +14,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.client.DefaultResponseErrorHandler;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.UnknownHttpStatusCodeException;
@@ -46,9 +44,9 @@ public class RestTemplateResponseErrorHandler implements ResponseErrorHandler {
 		String message = getErrorMessage(statusCode.value(), statusText, body, charset);
 		RestClientResponseException ex;
 		if (statusCode.is4xxClientError()) {
-			ex = HttpClientErrorException.create(message, statusCode, statusText, headers, body, charset);
+			ex = ExchangeClientException.create(message, statusCode, statusText, headers, body, charset);
 		} else if (statusCode.is5xxServerError()) {
-			ex = HttpServerErrorException.create(message, statusCode, statusText, headers, body, charset);
+			ex = ExchangeServerError.create(message, statusCode, statusText, headers, body, charset);
 		} else {
 			ex = new UnknownHttpStatusCodeException(message, statusCode.value(), statusText, headers, body, charset);
 		}
